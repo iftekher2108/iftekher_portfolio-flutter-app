@@ -8,10 +8,6 @@ void main() {
 class MyApp extends StatelessWidget {
   MyApp({super.key});
 
-  // final controller = WebViewController()
-  // ..setJavaScriptMode(JavaScriptMode.unrestricted)
-  // ..loadRequest(Uri.parse("http://localhost"));
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
