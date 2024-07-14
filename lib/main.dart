@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,9 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 // WebViewController? webViewController;
+ 
   final webViewController = WebViewController();
+
   @override
   void initState() {
     super.initState();
@@ -45,6 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
       );
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
         centerTitle: true,
         title: Text(
           widget.title.toUpperCase(),
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w800,
             fontFamily: "roboto",
@@ -91,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
         //   )
 
         // ],
-        backgroundColor: Color(0xFF407BE9),
+        backgroundColor: const Color(0xFF407BE9),
         // backgroundColor: Color.fromRGBO(100, 149, 237, 1),
 
         // title: Text(widget.title),
@@ -111,15 +115,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
       //   ),
 
-      floatingActionButton: Container(
+      floatingActionButton: SizedBox(
         height: 65,
         width: 65,
         child: FloatingActionButton(
           onPressed: () {
             webViewController.reload();
           },
-          backgroundColor: Color(0xFF407BE9),
-          shape: CircleBorder(),
+          backgroundColor: const Color(0xFF407BE9),
+          shape: const CircleBorder(),
           tooltip: 'Reload',
           child: const Icon(
             Icons.cached,
@@ -133,14 +137,14 @@ class _MyHomePageState extends State<MyHomePage> {
         notchMargin: 10,
         clipBehavior: Clip.antiAlias,
         elevation: 0,
-        shape: CircularNotchedRectangle(),
-        color: Color(0xFF407BE9),
+        shape: const CircularNotchedRectangle(),
+        color: const Color(0xFF407BE9),
         child: Container(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                margin: EdgeInsets.only(left: 30),
+                margin: const EdgeInsets.only(left: 30),
                 height:45,
                 width:45,
                 child: FloatingActionButton(
@@ -149,7 +153,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     webViewController.goBack();
                   },
                   backgroundColor: Colors.white,
-                  shape: CircleBorder(),
+                  shape: const CircleBorder(),
                   tooltip: 'Back',
                   child: const Icon(
                     Icons.arrow_back,
@@ -159,7 +163,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(right: 30),
+                margin: const EdgeInsets.only(right: 30),
                 height:45,
                 width:45,
                 child: FloatingActionButton(
@@ -169,7 +173,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     webViewController.reload();
                   },
                   backgroundColor: Colors.white,
-                  shape: CircleBorder(),
+                  shape: const CircleBorder(),
                   tooltip: 'Clear Cache',
                   child: const Icon(
                     Icons.monitor_heart,
